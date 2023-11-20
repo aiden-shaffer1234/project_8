@@ -2,8 +2,6 @@ package com.zybooks.myapplication;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,11 +14,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import java.util.logging.Logger;
+import com.zybooks.myapplication.model.FileEntry;
+import com.zybooks.myapplication.repo.FileRepo;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class FileActivity extends AppCompatActivity {
 
     private EditText mId;
     private EditText mName;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup mMale;
     private RadioGroup mFemale;
     private String dogBreed;
+    private String mGender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,14 +140,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Submit(View view) {
+        FileRepo mFileRepo = FileRepo.getInstance(this);
         StringBuilder message   = new StringBuilder();
         boolean empty           = false;
+        int strLen;
+
         String id               = mId.getText().toString();
         String name             = mName.getText().toString();
         String email            = mEmail.getText().toString();
         String access           = mAccessPassword.getText().toString();
         String confirm          = mConfirmPassword.getText().toString();
-        int strLen;
+        boolean neutered        = mNeutered.isChecked();
+        int buttonId            = mMaleOrFemale.getCheckedRadioButtonId();
+        String gender;
+
+        if(R.id.male_button == buttonId)
+        {
+            gender = "Male";
+        } else {
+            gender = "Female";
+        }
+
+        System.out.println(gender);
+
+
 
         if(id.length() == 0) {
             empty = true;
@@ -154,24 +172,37 @@ public class MainActivity extends AppCompatActivity {
             strLen = id.length();
 
             boolean error = false;
+
             if(strLen < 5 || strLen > 15) {
                 error = true;
                 message.append("ID must be 5-15 characters/digits long\n\n");
             }
-            for (int i = 0; i < strLen; i++) {
-                char temp = id.charAt(i);
 
-                if (!Character.isAlphabetic(temp) && !Character.isDigit(temp)) {
-                    message.append("ID must be letters or numbers, NO alphanumeric characters (%,!,&,ect)\n\n");
+            if(!error)
+            {
+                if(mFileRepo.contains(id))
+                {
                     error = true;
+                    message.append("ID Already Taken. Please Try Again\n\n");
                 }
-                if (Character.isAlphabetic(temp) && !Character.isUpperCase(temp)) {
-                    message.append("Letters in Id must be capitalized\n\n");
-                    error = true;
-                }
-
-
             }
+
+            if(!error)
+            {
+                for (int i = 0; i < strLen; i++) {
+                    char temp = id.charAt(i);
+
+                    if (!Character.isAlphabetic(temp) && !Character.isDigit(temp)) {
+                        message.append("ID must be letters or numbers, NO alphanumeric characters (%,!,&,ect)\n\n");
+                        error = true;
+                    }
+                    if (Character.isAlphabetic(temp) && !Character.isUpperCase(temp)) {
+                        message.append("Letters in Id must be capitalized\n\n");
+                        error = true;
+                    }
+                }
+            }
+
 
             if(error)
             {
@@ -292,7 +323,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(message.length() == 0) {
-
+            FileEntry newEntry = new FileEntry(id, name, gender, email, access, dogBreed, neutered);
+            mFileRepo.addFileEntry(newEntry);
             message.append("Information has successfully been added to the dataBase");
         }
 
