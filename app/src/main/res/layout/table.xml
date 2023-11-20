@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        >
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/petCare_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:text="@string/app_name"
+                android:textSize="@dimen/label_text_size"
+                android:gravity="center_horizontal"
+                android:layout_span="2"
+                android:layout_marginTop="20dp"
+                />
+        </TableRow>
+        <TableRow
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/petCare_Registration_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/reg_String"
+                android:textSize="25sp"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            >
+            <TextView
+                android:id="@+id/microchip_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/microchip_edit_text"
+                android:text="@string/Micro_ID_String"
+                android:textSize="@dimen/label_text_size"
+                />
+
+            <EditText
+                android:id="@+id/microchip_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="7"
+                android:layout_marginStart="30dp"
+                android:text="@string/Micro_ID_Default_String"
+                android:textSize="@dimen/label_text_size"
+                android:inputType="text"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            >
+            <TextView
+                android:id="@+id/Name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/Name_edit_text"
+                android:text="@string/Name"
+                android:textSize="@dimen/label_text_size"
+                />
+
+            <EditText
+                android:layout_marginStart="30dp"
+                android:id="@+id/Name_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="7"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textSize="@dimen/label_text_size"
+                />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            >
+            <TextView
+                android:id="@+id/Gender_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/Gender_Radio_Group"
+                android:text="@string/Gender_String"
+                android:textSize="@dimen/label_text_size"
+                />
+
+            <RadioGroup
+                android:layout_marginStart="30dp"
+                android:id="@+id/Gender_Radio_Group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:baselineAlignedChildIndex="0"
+                android:baselineAligned="true"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton android:id="@+id/male_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="@dimen/label_text_size"
+                    android:text="@string/male"
+                    android:checked="false"
+                    android:onClick="onGenderSelected"
+                    />
+
+                <RadioButton android:id="@+id/female_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="@dimen/label_text_size"
+                    android:text="@string/female"
+                    android:checked="true"
+                    android:onClick="onGenderSelected" />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            >
+            <TextView
+                android:id="@+id/email_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/email_edit_text"
+                android:text="@string/Email_String"
+                android:textSize="@dimen/label_text_size"
+                />
+
+            <EditText
+                android:layout_marginStart="30dp"
+                android:id="@+id/email_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:text="@string/Email_Default_String"
+                android:textSize="@dimen/label_text_size"
+                />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            >
+            <TextView
+                android:id="@+id/Access_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/Access_edit_text"
+                android:text="@string/Access_String"
+                android:textSize="@dimen/label_text_size"
+                />
+
+            <EditText
+                android:layout_marginStart="30dp"
+                android:id="@+id/Access_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:importantForAutofill="no"
+                android:inputType="numberPassword"
+                android:textSize="@dimen/label_text_size"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            >
+            <TextView
+                android:id="@+id/confirm_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/confirm_edit_text"
+                android:text="@string/Confirm_String"
+                android:textSize="@dimen/label_text_size"
+                />
+
+            <EditText
+                android:layout_marginStart="30dp"
+                android:id="@+id/confirm_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:importantForAutofill="no"
+                android:inputType="numberPassword"
+                android:textSize="@dimen/label_text_size"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"
+            >
+            <TextView
+                android:id="@+id/breed_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/email_edit_text"
+                android:text="@string/breed"
+                android:textSize="@dimen/label_text_size"
+                />
+
+            <Spinner
+                android:layout_marginStart="30dp"
+                android:id="@+id/breed_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            >
+            <TextView
+                android:id="@+id/neutered_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/confirm_edit_text"
+                android:text="@string/Neutered_String"
+                android:textSize="@dimen/label_text_size" />
+
+            <CheckBox
+                android:layout_marginStart="30dp"
+                android:id="@+id/checkbox_Neutered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Is_Neutered_String"
+                android:onClick="onCheckboxClicked"
+                android:checked="true"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            >
+
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:onClick="Reset"
+                android:text="@string/RESET_String"
+                android:layout_column="1"
+                android:layout_marginStart="90dp"/>
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="Submit"
+                android:text="@string/SUBMIT_String"
+                android:layout_column="1"
+                android:layout_marginEnd="30dp"/>
+        </TableRow>
+    </TableLayout>
+</ScrollView>

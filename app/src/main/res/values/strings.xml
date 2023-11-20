@@ -1,0 +1,32 @@
+<resources>
+    <!-- labels -->
+    <string name="reg_String">Pet Registration Form</string>
+    <string name="app_name">PetCare</string>
+    <string name="Name">Name</string>
+    <string name="Micro_ID_String">Microchip ID</string>
+    <string name="Gender_String">Gender</string>
+    <string name="Email_String">Email Address</string>
+    <string name="Access_String">Access Code</string>
+    <string name="Confirm_String">Confirm Code</string>
+    <string name="Neutered_String">Neutered</string>
+    <string name="Is_Neutered_String">Is Neutered?</string>
+    <string name="RESET_String">RESET</string>
+    <string name="SUBMIT_String">SUBMIT</string>
+    <string-array name="Dog_Type_array">
+        <item>N/A</item>
+        <item>Husky</item>
+        <item>Golden Retriever</item>
+        <item>Poodle</item>
+        <item>Pug</item>
+        <item>Beagle</item>
+    </string-array>
+
+    <!-- Defaults -->
+    <string name="Email_Default_String">none@none.com</string>
+    <string name="Micro_ID_Default_String">ID</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="breed">Breed</string>
+
+
+</resources>

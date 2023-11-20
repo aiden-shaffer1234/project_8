@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/petCare_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/app_name"
+            android:textSize="@dimen/label_text_size"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/petCare_Registration_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/reg_String"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/petCare_text_view"
+            />
+        <TextView
+            android:id="@+id/microchip_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/microchip_edit_text"
+            android:text="@string/Micro_ID_String"
+            android:textSize="@dimen/label_text_size"
+            android:layout_marginStart="30dp"
+            android:layout_below="@id/petCare_Registration_text_view"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="30dp"
+            />
+
+        <EditText
+            android:id="@+id/microchip_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="7"
+            android:layout_marginStart="30dp"
+            android:text="@string/Micro_ID_Default_String"
+            android:textSize="@dimen/label_text_size"
+            android:inputType="text"
+            android:layout_alignBaseline="@id/microchip_text_view"
+            android:layout_toEndOf = "@id/microchip_text_view"
+            />
+
+        <TextView
+            android:id="@+id/Name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/Name_edit_text"
+            android:text="@string/Name"
+            android:textSize="@dimen/label_text_size"
+            android:layout_below="@id/microchip_text_view"
+            android:layout_alignStart="@id/microchip_text_view"
+            android:layout_marginTop="@dimen/vertical_padding"
+            />
+
+        <EditText
+            android:id="@+id/Name_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="7"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textSize="@dimen/label_text_size"
+            android:layout_alignBaseline="@id/Name_text_view"
+            android:layout_alignStart="@id/microchip_edit_text"
+            />
+
+        <TextView
+            android:id="@+id/Gender_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/Gender_Radio_Group"
+            android:text="@string/Gender_String"
+            android:textSize="@dimen/label_text_size"
+            android:layout_below="@id/Name_text_view"
+            android:layout_alignStart="@id/microchip_text_view"
+            android:layout_marginTop="@dimen/vertical_padding"
+            />
+
+        <RadioGroup
+            android:id="@+id/Gender_Radio_Group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/microchip_edit_text"
+            android:layout_alignBaseline="@id/Gender_text_view"
+            android:baselineAlignedChildIndex="0"
+            android:baselineAligned="true"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton android:id="@+id/male_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textSize="@dimen/label_text_size"
+                android:text="@string/male"
+                android:checked="false"
+                android:onClick="onGenderSelected"
+                />
+
+            <RadioButton android:id="@+id/female_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textSize="@dimen/label_text_size"
+                android:text="@string/female"
+                android:checked="true"
+                android:onClick="onGenderSelected" />
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/email_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/email_edit_text"
+            android:text="@string/Email_String"
+            android:textSize="@dimen/label_text_size"
+            android:layout_below="@id/Gender_text_view"
+            android:layout_alignStart="@id/microchip_text_view"
+            android:layout_marginTop="@dimen/vertical_padding"
+            />
+
+        <EditText
+            android:id="@+id/email_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:text="@string/Email_Default_String"
+            android:textSize="@dimen/label_text_size"
+            android:layout_alignBaseline="@id/email_text_view"
+            android:layout_alignStart="@id/microchip_edit_text"
+            />
+
+        <TextView
+            android:id="@+id/Access_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/Access_edit_text"
+            android:text="@string/Access_String"
+            android:textSize="@dimen/label_text_size"
+            android:layout_below="@id/email_text_view"
+            android:layout_alignStart="@id/microchip_text_view"
+            android:layout_marginTop="@dimen/vertical_padding"
+            />
+
+        <EditText
+            android:id="@+id/Access_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:importantForAutofill="no"
+            android:inputType="numberPassword"
+            android:textSize="@dimen/label_text_size"
+            android:layout_alignBaseline="@id/Access_text_view"
+            android:layout_alignStart="@id/microchip_edit_text"
+            />
+
+        <TextView
+            android:id="@+id/confirm_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/confirm_edit_text"
+            android:text="@string/Confirm_String"
+            android:textSize="@dimen/label_text_size"
+            android:layout_below="@id/Access_text_view"
+            android:layout_alignStart="@id/microchip_text_view"
+            android:layout_marginTop="@dimen/vertical_padding"
+            />
+
+        <EditText
+            android:id="@+id/confirm_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:importantForAutofill="no"
+            android:inputType="numberPassword"
+            android:textSize="@dimen/label_text_size"
+            android:layout_alignBaseline="@id/confirm_text_view"
+            android:layout_alignStart="@id/microchip_edit_text"
+            />
+
+        <TextView
+            android:id="@+id/breed_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/email_edit_text"
+            android:text="@string/breed"
+            android:textSize="@dimen/label_text_size"
+            android:layout_below="@id/confirm_text_view"
+            android:layout_alignStart="@id/microchip_text_view"
+            android:layout_marginTop="@dimen/vertical_padding"
+            />
+
+        <Spinner
+            android:id="@+id/breed_spinner"
+            android:layout_alignBaseline="@id/breed_text_view"
+            android:layout_alignStart="@id/microchip_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/neutered_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/confirm_edit_text"
+            android:text="@string/Neutered_String"
+            android:textSize="@dimen/label_text_size"
+            android:layout_below="@id/breed_text_view"
+            android:layout_alignStart="@id/microchip_text_view"
+            android:layout_marginTop="@dimen/vertical_padding" />
+
+        <CheckBox android:id="@+id/checkbox_Neutered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Is_Neutered_String"
+            android:onClick="onCheckboxClicked"
+            android:checked="true"
+            android:layout_alignBaseline="@id/neutered_text_view"
+            android:layout_alignStart="@id/microchip_edit_text"
+            />
+
+        <Button
+            android:id="@+id/reset_button"
+            android:text="@string/RESET_String"
+            android:layout_toStartOf="@id/submit_button"
+            android:layout_below="@id/checkbox_Neutered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:onClick="Reset" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Submit"
+            android:text="@string/SUBMIT_String"
+            android:layout_below="@id/checkbox_Neutered"
+            android:layout_toEndOf="@id/checkbox_Neutered" />
+    </RelativeLayout>
+</ScrollView>
